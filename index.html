@@ -7,51 +7,62 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="image-logo-container">
-        <img src="images/odin-lined.png" width="50px" height="100px" alt="The Odin Logo">
-        ODIN
-        <div>Photo by <a href="https://unsplash.com/@haliewestphoto">Halie West</a> on <a href="https://unsplash.com/">Unsplash</a></div>
+    <div class="left-column">
+        <div class="title-banner">
+            <img src="images/odin-lined.png" width="65px" height="85px" alt="The Odin Logo">
+            <span class="title-text">ODIN</span>
+        </div>
+
+        <div class="background-image-credits">Photo by <a href="https://unsplash.com/@haliewestphoto">Halie West</a> on <a href="https://unsplash.com/">Unsplash</a></div>
     </div>
     
-    <div class="info-and-form-container">
-        <p>This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams. Sign up <em>now</em> to get started.</p>
-        <p>You <em>know</em> you want to.</p>
-        <p>Let's do this!</p>
-        <form id="signup">
-            <ul>
-                <li>
-                    <label for="first-name">FIRST NAME</label>
-                    <input type="text" id="first-name" name="first-name">
-                </li>
-                <li>
-                    <label for="last-name">LAST NAME</label>
-                    <input type="text" id="last-name" name="last-name">
-                </li>
-                <li>
-                    <label for="email">EMAIL</label>
-                    <input type="email" id="email" name="email">
-                </li>
-                <li>
-                    <label for="tel">PHONE NUMBER</label>
-                    <input type="tel" id="tel" name="tel">
-                </li>
-                <li>
-                    <label for="password">PASSWORD</label>
-                    <input type="password" id="password" name="password">
-                </li>
-                <li>
-                    <label for="confirm-password">CONFIRM PASSWORD</label>
-                    <input type="password" id="confirm-password" name="confirm-password">
-                </li>
-            </ul>
-        </form>
+    <div class="right-column">
+            
+        <div class="info-container">
+            <p>This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams. 
+                <br> Sign up <em>now</em> to get started.</p>
+            <p>You <em>know</em> you want to.</p>
+        </div>
+
+        <div class="form-container">
+            <p>Let's do this!</p>
+            <form id="sign-up">
+                <ul>
+                    <li>
+                        <label for="first-name">FIRST NAME</label>
+                        <input type="text" id="first-name" name="first-name">
+                    </li>
+                    <li>
+                        <label for="last-name">LAST NAME</label>
+                        <input type="text" id="last-name" name="last-name">
+                    </li>
+                    <li>
+                        <label for="email">EMAIL</label>
+                        <input type="email" id="email" name="email">
+                    </li>
+                    <li>
+                        <label for="tel">PHONE NUMBER</label>
+                        <input type="tel" id="tel" name="tel">
+                    </li>
+                    <li>
+                        <label for="password">PASSWORD</label>
+                        <input type="password" id="password" name="password">
+                    </li>
+                    <li>
+                        <label for="confirm-password">CONFIRM PASSWORD</label>
+                        <input type="password" id="confirm-password" name="confirm-password">
+                    </li>
+                </ul>
+            </form>
+        </div>
+
+        <div class="button-login-container">
+            <button type="submit" form="signup">Create Account</button>
+            <p>Already have an account? <a href="">Log in</a></p>
+    
+        </div>
     </div>
 
-    <div class="button-login-container">
-        <button type="submit" form="signup">Create Account</button>
-        <p>Already have an account? <a href="">Log in</a></p>
-
-    </div>
 
 </body>
 </html>
