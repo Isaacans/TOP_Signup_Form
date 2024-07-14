@@ -30,7 +30,7 @@
                 <ul>
                     <li>
                         <label for="first-name">FIRST NAME</label>
-                        <input type="text" id="first-name" name="first-name">
+                        <input type="text" id="first-name" name="first-name" required>
                     </li>
                     <li>
                         <label for="last-name">LAST NAME</label>
@@ -46,18 +46,26 @@
                     </li>
                     <li>
                         <label for="password">PASSWORD</label>
-                        <input type="password" id="password" name="password">
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password"
+                            pattern="^(?=.*\d)(?=.*[A-Za-z])[A-Za-z\d\w\W]{8,}$">
                     </li>
                     <li>
                         <label for="confirm-password">CONFIRM PASSWORD</label>
-                        <input type="password" id="confirm-password" name="confirm-password">
+                        <input 
+                            type="password" 
+                            id="confirm-password" 
+                            name="confirm-password"
+                            pattern="^(?=.*\d)(?=.*[A-Za-z])[A-Za-z\d\w\W]{8,}$">
                     </li>
                 </ul>
             </form>
         </div>
 
         <div class="button-login-container">
-            <button type="submit" form="signup">Create Account</button>
+            <button type="submit" form="sign-up">Create Account</button>
             <p>Already have an account? <a href="">Log in</a></p>
     
         </div>

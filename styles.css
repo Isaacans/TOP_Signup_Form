@@ -15,10 +15,11 @@
     font-family: sans-serif; 
     line-height: 1.4;
     -webkit-font-smoothing: antialiased;
-    display: flex;
 }
 body {
-    width: 100vw;
+    display: flex;
+    flex: 1 1 auto;
+    height: clamp(750px, 100vh, 100vh);
 }
 picture, video, canvas, svg {
     display: block;
@@ -26,20 +27,25 @@ picture, video, canvas, svg {
 }
 *, input, button, textarea, select {
     font: inherit;
+    
 }
 p, h1, h2, h3, h4, h5, h6 {
     overflow-wrap: break-word;
 }
+em {
+    font-style: italic;
+}
 .left-column {
     background-image: url("images/fern.jpg");
-    background-size:cover;
+    background-size: cover;
     background-position-x: center;
     background-repeat: no-repeat;
     background-color: grey;
+    flex: 0.8 1;
+    min-width: 325px;
     display: flex;
-    flex: 0 0 33%;
-    height: 100vh;
     flex-direction: column;
+    width: 100%;
 }
 .title-banner {
     display: flex;
@@ -55,7 +61,7 @@ p, h1, h2, h3, h4, h5, h6 {
 .background-image-credits {
     text-align:  center;
     margin-top: auto;
-    margin-bottom: 15px;
+    margin-bottom: 3%;
     font-size: 0.75em;
     color: white;
     opacity: 0.75;
@@ -69,19 +75,16 @@ p, h1, h2, h3, h4, h5, h6 {
 #sign-up>ul {
     list-style-type: none;
 }
-em {
-    font-style: italic;
-}
 .right-column {
-    flex: 1 1 67%;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    flex: 1.33 0;
 }
 .info-container,
 .form-container,
 .button-login-container {
-    padding: 10px 130px 30px 40px;
+    padding: 2% 130px 5% 40px;
+    min-width: 600px;
 }
 .info-container,
 .button-login-container {
@@ -89,9 +92,14 @@ em {
 }
 .info-container {
     padding-top: 8%;
-    flex: 0 0 35vh;
+    height: calc(20vh + 15%);
+    flex: 1;
     p {
-        margin-bottom: 30px;
+        width: clamp(555px, 60%, 800px);
+        margin-bottom: 3%;
+    }
+    p:last-of-type {
+        margin-bottom: clamp(10px, 3%, 25px);
     }
 }
 .info-container,
@@ -101,11 +109,11 @@ em {
     font-weight: bold;
 }
 .form-container {
-    flex: 0 0 32vh;
+    flex: 1;
 }
 .button-login-container {
     box-shadow: 0px -3px 6px #c9c9c9;
-    flex: 1 1 33vh;
+    flex: 1.2;
     button {
         padding: 10px 45px;
         border: none;
@@ -122,5 +130,73 @@ em {
         color: #596D48;
         font-weight: bold;
         text-decoration: none;
+    }
+}
+form {
+    font-size: 0.45em;
+    letter-spacing: 0.15em;
+    color: rgb(55, 55, 55);
+    label {
+        display: block;
+    }
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 25px;
+        width: clamp(555px, 60%, 800px);
+    }
+    li {
+        margin: 5px 25px 25px 0px;
+        flex: 1 0 250px;
+    }
+    input {
+        font-size: 1.1rem;
+        font-weight: normal;
+        line-height: 1.4;
+        border: solid 1px #cccccc;
+        background-color: #fafafa;
+        border-radius: 5px;
+        -webkit-appearance: none;
+        appearance: none;
+        padding: 2px 5px;
+        margin-top: 2px;
+    }
+    input:focus {
+        border: solid 1px #317dee;
+        outline: none;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px #aaaaaa;
+    }
+    input:invalid {
+        border-color: rgb(235, 120, 120);
+    }
+    label {
+        position: relative;
+    }
+    label:has(+input[required]:invalid)::before {
+        position: absolute;
+        content: "Required";
+        color: rgb(235, 100, 100);
+        left: 185px;
+        bottom: -50px;
+        font-size: 0.95em;
+    }
+    label:has(+input:invalid)::before {
+        position: absolute;
+        content: "Invalid format";
+        width: 85px;
+        color: rgb(235, 100, 100);
+        left: 155px;
+        bottom: -50px;
+        font-size: 0.95em;
+    }
+    label:has(+input[type=password]:invalid)::before {
+        position: absolute;
+        content: "Minimum 8 characters and include 1 letter and number";
+        width: 185px;
+        color: rgb(235, 100, 100);
+        left: 0px;
+        bottom: -65px;
+        font-size: 0.95em;
     }
 }
