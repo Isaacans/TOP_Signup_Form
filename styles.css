@@ -16,11 +16,6 @@
     line-height: 1.4;
     -webkit-font-smoothing: antialiased;
 }
-body {
-    display: flex;
-    flex: 1 1 auto;
-    height: clamp(750px, 100vh, 100vh);
-}
 picture, video, canvas, svg {
     display: block;
     max-width: 100%;
@@ -35,28 +30,40 @@ p, h1, h2, h3, h4, h5, h6 {
 em {
     font-style: italic;
 }
+html {
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.main-container {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+}
 .left-column {
     background-image: url("images/fern.jpg");
     background-size: cover;
     background-position-x: center;
     background-repeat: no-repeat;
-    background-color: grey;
-    flex: 0.8 1;
+    flex: 0.8;
     min-width: 325px;
     display: flex;
     flex-direction: column;
-    width: 100%;
+
 }
 .title-banner {
     display: flex;
     align-items: center;
+    justify-content: center;
     margin-top: 20vh;
     background-color: rgba(0, 0, 0, 0.425);
     font-family: 'norse', 'Courier New', Courier, monospace ;
     color: white;
     font-size: 4em;
     height: 15%;
-    justify-content: center;
 }
 .background-image-credits {
     text-align:  center;
@@ -72,18 +79,15 @@ em {
 .background-image-credits>a:active {
     color: white;
 }
-#sign-up>ul {
-    list-style-type: none;
-}
 .right-column {
     display: flex;
     flex-direction: column;
-    flex: 1.33 0;
+    flex: 1.15;
 }
 .info-container,
 .form-container,
 .button-login-container {
-    padding: 2% 130px 5% 40px;
+    padding: 25px 50px 20px 30px;
     min-width: 600px;
 }
 .info-container,
@@ -91,34 +95,35 @@ em {
     background-color: #f7f7f7;
 }
 .info-container {
-    padding-top: 8%;
-    height: calc(20vh + 15%);
-    flex: 1;
+    padding-top: clamp(40px, 5vh, 800px);
+    padding-bottom: 0px;
+    flex-basis: 255px;
     p {
         width: clamp(555px, 60%, 800px);
-        margin-bottom: 3%;
+        margin: clamp(10px, 2vh, 50px) 0px;
     }
     p:last-of-type {
-        margin-bottom: clamp(10px, 3%, 25px);
+        padding-top: clamp(10px, 5vh, 50px);
     }
 }
 .info-container,
 .form-container {
-    font-size: 1.4em;
+    flex-grow: 1;
+    font-size: 1.3em;
     line-height: 1.3;
     font-weight: bold;
 }
-.form-container {
-    flex: 1;
+#sign-up>ul {
+    list-style-type: none;
 }
 .button-login-container {
     box-shadow: 0px -3px 6px #c9c9c9;
-    flex: 1.2;
+    flex-grow: 1;
     button {
+        margin: 20px 0px;
         padding: 10px 45px;
         border: none;
         border-radius: 5px;
-        margin: 30px 0px;
         background-color: #596D48;
         color: white;
         font-weight: bold;
@@ -153,6 +158,7 @@ form {
         font-size: 1.1rem;
         font-weight: normal;
         line-height: 1.4;
+        width: 250px;
         border: solid 1px #cccccc;
         background-color: #fafafa;
         border-radius: 5px;
@@ -175,9 +181,9 @@ form {
     }
     label:has(+input[required]:invalid)::before {
         position: absolute;
-        content: "Required";
+        content: "*Required";
         color: rgb(235, 100, 100);
-        left: 185px;
+        left: 190px;
         bottom: -50px;
         font-size: 0.95em;
     }
@@ -186,16 +192,16 @@ form {
         content: "Invalid format";
         width: 85px;
         color: rgb(235, 100, 100);
-        left: 155px;
+        left: 165px;
         bottom: -50px;
         font-size: 0.95em;
     }
     label:has(+input[type=password]:invalid)::before {
         position: absolute;
-        content: "Minimum 8 characters and include 1 letter and number";
-        width: 185px;
+        content: "*Minimum 8 characters. Must include a letter and a number";
+        width: 230px;
         color: rgb(235, 100, 100);
-        left: 0px;
+        left: 2px;
         bottom: -65px;
         font-size: 0.95em;
     }
